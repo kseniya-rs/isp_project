@@ -26,7 +26,7 @@ SECRET_KEY = 'ubsq#xai!qa_!dsi=61a&mbqn)lxtl*x48$fi0v-l^k%0z1^bn'
 DEBUG = True
 #DEBUG = int(os.environ.get("DEBUG", default=1))
 
-ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", "localhost"]
+ALLOWED_HOSTS = ["127.0.0.1", "0.0.0.0", "localhost", "93.125.0.70"]
 
 # Application definition
 
@@ -174,8 +174,8 @@ LOGGING = {
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'noreply.ecommerse@gmail.com'
-EMAIL_HOST_PASSWORD = 'CuB7GZa8E8ntgTM'
+EMAIL_HOST_USER = 'iitp953504@gmail.com'
+EMAIL_HOST_PASSWORD = '953504qwertyu'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

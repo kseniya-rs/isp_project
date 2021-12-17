@@ -36,9 +36,9 @@ def contact(request):
         t = Thread()
         t.daemon = True
         t.start()
-        user = models.Realtor.email
+        user = email
         
-        send_mail('Your request has been submitted, a realtor will get back to you soon have a great day!', EMAIL_HOST_USER, [user], fail_silently=False)
+        send_mail('Ваш запрос был отправлен, риелтор ответит так скоро как сможет, приятного дня!', 'Заявка рассматривается', EMAIL_HOST_USER, [user], fail_silently=True)
 
         messages.success(request, 'Your request has been submitted, a realtor will get back to you soon')
 
