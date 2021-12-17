@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  web:
+    image: "bsuir"
+    container_name: "btre"
+    build: btre_project
+    command: gunicorn btre.wsgi:application --bind 0.0.0.0:8000
+    expose:
+      - 8000
+    volumes:
+      - static_data:/app/web/static
+    env_file:
+      - btre_project/.env.prod
+    depends_on:
+       - postgres
+  postgres:
+    image: postgres:12.0-alpine
+    container_name: "postgres_btre"
+    env_file:
+       - btre_project/.env.prod
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  nginx:
+    build: nginx
+    volumes:
+      - static_data:/app/web/static
+    ports:
+      - 80:80
+    depends_on:
+      - web
+volumes:
+  postgres_data:
+  static_data:
